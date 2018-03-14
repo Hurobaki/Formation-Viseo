@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Azar</title>
+</head>
+
+<body>
+    <button onclick="throwDice();">Click me </button>
+
+
+    <svg width="1000" height="800" id="cont">
+        <rect x="200" y="250" width="100" height="100" style="fill: none; stroke: black;" />
+        <rect x="400" y="250" width="100" height="100" style="fill: none; stroke: black;" />
+        <rect x="600" y="250" width="100" height="100" style="fill: none; stroke: black;" />
+    </svg>
+
+
+
+    <script>
+
+        throwDice = random => {
+            redrawDice();
+            const dice1 = Math.floor(Math.random() * (6 - 1 + 1) + 1);
+            console.log(dice1);
+            generateDice(dice1, 200);
+            const dice2 = Math.floor(Math.random() * (6 - 1 + 1) + 1);
+            console.log(dice2);
+            generateDice(dice2, 400);
+            const dice3 = Math.floor(Math.random() * (6 - 1 + 1) + 1);
+            console.log(dice3);
+            generateDice(dice3, 600);
+        } 
+
+        generateDice = (diceNumber, positionDice) => {
+            var svgns = "http://www.w3.org/2000/svg";
+            var container = document.getElementById('cont');
+            var circles = document.getElementsByTagName('circle');
+            console.log("dicenumber", diceNumber);
+            console.log("position", positionDice);
+            switch (diceNumber) {
+                case 1:
+                    let circle = document.createElementNS(svgns, 'circle');
+                    circle.setAttributeNS(null, 'cx', positionDice + 50);
+                    circle.setAttributeNS(null, 'cy', 250 + 50);
+                    circle.setAttributeNS(null, 'r', 5);
+                    circle.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle);
+                    break;
+                case 2:
+                    let circle1 = document.createElementNS(svgns, 'circle');
+                    circle1.setAttributeNS(null, 'cx', positionDice + 25);
+                    circle1.setAttributeNS(null, 'cy', 250 + 25);
+                    circle1.setAttributeNS(null, 'r', 5);
+                    circle1.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle1);
+
+                    let circle2 = document.createElementNS(svgns, 'circle');
+                    circle2.setAttributeNS(null, 'cx', positionDice + 75);
+                    circle2.setAttributeNS(null, 'cy', 250 + 75);
+                    circle2.setAttributeNS(null, 'r', 5);
+                    circle2.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle2);7
+                    break;
+                default:
+                    break;
+            }
+            if (diceNumber === 1) {
+                console.log("switch 1");
+                    
+            } else if (diceNumber === 2) {
+                console.log("switch 2");
+                    
+            } else if (diceNumber === 3) {
+                    let circle3 = document.createElementNS(svgns, 'circle');
+                    circle3.setAttributeNS(null, 'cx', positionDice + 50);
+                    circle3.setAttributeNS(null, 'cy', 250 + 50);
+                    circle3.setAttributeNS(null, 'r', 5);
+                    circle3.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle3);
+
+                    let circle4 = document.createElementNS(svgns, 'circle');
+                    circle4.setAttributeNS(null, 'cx', positionDice + 25);
+                    circle4.setAttributeNS(null, 'cy', 250 + 25);
+                    circle4.setAttributeNS(null, 'r', 5);
+                    circle4.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle4);
+
+                    let circle5 = document.createElementNS(svgns, 'circle');
+                    circle5.setAttributeNS(null, 'cx', positionDice + 75);
+                    circle5.setAttributeNS(null, 'cy', 250 + 75);
+                    circle5.setAttributeNS(null, 'r', 5);
+                    circle5.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle5);
+            } else if (diceNumber === 4) {
+                    let circle6 = document.createElementNS(svgns, 'circle');
+                    circle6.setAttributeNS(null, 'cx', positionDice + 25);
+                    circle6.setAttributeNS(null, 'cy', 250 + 25);
+                    circle6.setAttributeNS(null, 'r', 5);
+                    circle6.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle6);
+
+                    let circle7 = document.createElementNS(svgns, 'circle');
+                    circle7.setAttributeNS(null, 'cx', positionDice + 75);
+                    circle7.setAttributeNS(null, 'cy', 250 + 75);
+                    circle7.setAttributeNS(null, 'r', 5);
+                    circle7.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle7);
+
+                    let circle8 = document.createElementNS(svgns, 'circle');
+                    circle8.setAttributeNS(null, 'cx', positionDice + 75);
+                    circle8.setAttributeNS(null, 'cy', 250 + 25);
+                    circle8.setAttributeNS(null, 'r', 5);
+                    circle8.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle8);
+
+                    let circle9 = document.createElementNS(svgns, 'circle');
+                    circle9.setAttributeNS(null, 'cx', positionDice + 25);
+                    circle9.setAttributeNS(null, 'cy', 250 + 75);
+                    circle9.setAttributeNS(null, 'r', 5);
+                    circle9.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle9);
+            } else if (diceNumber === 5) {
+                    let circle10 = document.createElementNS(svgns, 'circle');
+                    circle10.setAttributeNS(null, 'cx', positionDice + 25);
+                    circle10.setAttributeNS(null, 'cy', 250 + 25);
+                    circle10.setAttributeNS(null, 'r', 5);
+                    circle10.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle10);
+
+                    let circle11 = document.createElementNS(svgns, 'circle');
+                    circle11.setAttributeNS(null, 'cx', positionDice + 75);
+                    circle11.setAttributeNS(null, 'cy', 250 + 75);
+                    circle11.setAttributeNS(null, 'r', 5);
+                    circle11.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle11);
+
+                    let circle12 = document.createElementNS(svgns, 'circle');
+                    circle12.setAttributeNS(null, 'cx', positionDice + 75);
+                    circle12.setAttributeNS(null, 'cy', 250 + 25);
+                    circle12.setAttributeNS(null, 'r', 5);
+                    circle12.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle12);
+
+                    let circle13 = document.createElementNS(svgns, 'circle');
+                    circle13.setAttributeNS(null, 'cx', positionDice + 25);
+                    circle13.setAttributeNS(null, 'cy', 250 + 75);
+                    circle13.setAttributeNS(null, 'r', 5);
+                    circle13.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle13);
+
+                    let circle14 = document.createElementNS(svgns, 'circle');
+                    circle14.setAttributeNS(null, 'cx', positionDice + 50);
+                    circle14.setAttributeNS(null, 'cy', 250 + 50);
+                    circle14.setAttributeNS(null, 'r', 5);
+                    circle14.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle14);
+            } else if (diceNumber === 6) {
+                    let circle15 = document.createElementNS(svgns, 'circle');
+                    circle15.setAttributeNS(null, 'cx', positionDice + 25);
+                    circle15.setAttributeNS(null, 'cy', 250 + 25);
+                    circle15.setAttributeNS(null, 'r', 5);
+                    circle15.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle15);
+
+                    let circle16 = document.createElementNS(svgns, 'circle');
+                    circle16.setAttributeNS(null, 'cx', positionDice + 75);
+                    circle16.setAttributeNS(null, 'cy', 250 + 75);
+                    circle16.setAttributeNS(null, 'r', 5);
+                    circle16.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle16);
+
+                    let circle17 = document.createElementNS(svgns, 'circle');
+                    circle17.setAttributeNS(null, 'cx', positionDice + 75);
+                    circle17.setAttributeNS(null, 'cy', 250 + 25);
+                    circle17.setAttributeNS(null, 'r', 5);
+                    circle17.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle17);
+
+                    let circle18 = document.createElementNS(svgns, 'circle');
+                    circle18.setAttributeNS(null, 'cx', positionDice + 25);
+                    circle18.setAttributeNS(null, 'cy', 250 + 75);
+                    circle18.setAttributeNS(null, 'r', 5);
+                    circle18.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle18);
+
+                    let circle19 = document.createElementNS(svgns, 'circle');
+                    circle19.setAttributeNS(null, 'cx', positionDice + 25);
+                    circle19.setAttributeNS(null, 'cy', 250 + 50);
+                    circle19.setAttributeNS(null, 'r', 5);
+                    circle19.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle19);
+
+                    let circle20 = document.createElementNS(svgns, 'circle');
+                    circle20.setAttributeNS(null, 'cx', positionDice + 75);
+                    circle20.setAttributeNS(null, 'cy', 250 + 50);
+                    circle20.setAttributeNS(null, 'r', 5);
+                    circle20.setAttributeNS(null, 'style', 'fill: black; stroke: blue; stroke-width: 1px;');
+                    container.appendChild(circle20);
+
+            }
+        }
+
+        redrawDice = () => {
+            var circles = document.getElementsByTagName('circle'), index;
+            
+            for (index = circles.length - 1; index >= 0; index--) {
+                circles[index].parentNode.removeChild(circles[index]);
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
