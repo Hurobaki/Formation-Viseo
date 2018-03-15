@@ -17,11 +17,20 @@ function playRound(player) {
         player.inGame = false
     }
     else {
-        for (let i = 0; i <= result; ++i) {
-            player.currentPos = parseInt(player.currentPos + i)
-            console.log(`Player ${player.color} new position is ${player.currentPos}`)
-        }
+        player.currentPos = parseInt(player.currentPos + result)
+        console.log(`Player ${player.color} new position is ${player.currentPos}`)
+        moveHorseInSameSpot(player)
     }
+}
+
+function moveHorseInSameSpot(mainPlayer){
+    players.forEach(player => {
+        if(player.color !== mainPlayer.color && player.currentPos === mainPlayer.currentPos){
+            player.currentPos=0
+            console.log(`Player ${player.color} got kicked out by player ${mainPlayer.color}`)
+
+        }
+    })
 }
 
 game = () => {
