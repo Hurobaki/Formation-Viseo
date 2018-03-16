@@ -2,7 +2,45 @@ const arrayAzar = [3,4,5,6,15,16,17,18];
 
 throwDice = random => Math.floor(Math.random() * (18 - 3 + 1) + 3);
 
-isAzar = score => arrayAzar.includes(score);
+isAzar = score => ((score>=3 && score<=6) || (score>=15 && score<=18));
+
+function firstRound(player1, player2){
+    var result = throwDice();
+    console.log(`${player1.name} got a ${result} in his throw`)
+    if (checkFirstRoundAction(diceResult)){
+        secondRound(player1, player2)
+    }
+    return
+    /*
+    console.log(`${currentPlayer.name} got a ${result} in his throw`)
+    if (result === currentPlayer.luckyNumber) {
+        console.log(`${currentPlayer.name} won the game by getting his lucky number`);
+        return 
+    } else if (result === opponent.luckyNumber){
+        console.log(`${opponent.name} won the game by getting his lucky number`);
+        return 
+    }
+    return*/
+}
+
+function secondRound(){
+
+}
+
+function otherRound(){
+
+}
+
+function checkFirstRoundAction(diceResult, ...args){
+    let players = [...args]
+    if(isAzar(diceResult)){
+        console.log(`${players[0].name} won the game with a Azar`);
+        return false
+    }
+    players[1].luckyNumber=diceResult
+    return true
+}
+function luckyNumberForOpponent(){}
 
 recursiveTurn = (opponent, currentPlayer) => {
     var result = throwDice();
@@ -52,4 +90,4 @@ var player2 = {
     luckyNumber: null
 }
 
-startGame(player1, player2)
+//startGame(player1, player2)
