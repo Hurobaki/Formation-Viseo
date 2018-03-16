@@ -1,46 +1,38 @@
 const arrayAzar = [3,4,5,6,15,16,17,18];
 
-throwDice = random => Math.floor(Math.random() * (18 - 3 + 1) + 3);
+throwDice = () => Math.floor(Math.random() * (18 - 3 + 1) + 3);
 
 isAzar = score => ((score>=3 && score<=6) || (score>=15 && score<=18));
 
-function firstRound(player1, player2){
-    var result = throwDice();
-    console.log(`${player1.name} got a ${result} in his throw`)
-    if (checkFirstRoundAction(diceResult)){
-        secondRound(player1, player2)
-    }
-    return
-    /*
-    console.log(`${currentPlayer.name} got a ${result} in his throw`)
-    if (result === currentPlayer.luckyNumber) {
-        console.log(`${currentPlayer.name} won the game by getting his lucky number`);
-        return 
-    } else if (result === opponent.luckyNumber){
-        console.log(`${opponent.name} won the game by getting his lucky number`);
-        return 
-    }
-    return*/
+checkFirstRoundAction = (diceResult, ...args) => {
+  let players = [...args]
+  if (isAzar(diceResult)) {
+    console.log(`${players[0].name} won the game with a Azar`);
+    return false
+  }
+  players[1].luckyNumber=diceResult
+  return true
 }
 
-function secondRound(){
-
+secondRound = (diceResult, ...args) => {
+  let players = [...args]
+  if (isAzar(diceResult)) {
+    console.log(`${players[0].name} lost the game due to a ReAzar`)
+    return false
+  } else if (diceResult === players[1].luckyNumber) {
+    console.log(`It\s a draw !`)
+    return false
+  }
+  else {
+    players[0].luckyNumber = diceResult
+  }
 }
 
 function otherRound(){
 
 }
-
-function checkFirstRoundAction(diceResult, ...args){
-    let players = [...args]
-    if(isAzar(diceResult)){
-        console.log(`${players[0].name} won the game with a Azar`);
-        return false
-    }
-    players[1].luckyNumber=diceResult
-    return true
-}
 function luckyNumberForOpponent(){}
+
 
 recursiveTurn = (opponent, currentPlayer) => {
     var result = throwDice();
@@ -56,12 +48,12 @@ recursiveTurn = (opponent, currentPlayer) => {
 }
 
 startGame = (player1, player2) => {
-    var result = throwDice();
+    let result = throwDice();
     console.log(`${player1.name} got a ${result} in his first throw`)
     if (isAzar(result)) {
         console.log(`${player1.name} won the game with a Azar on first throw`)
         return
-    } 
+    }
 
     player2.luckyNumber = result,
     console.log(`${player2.name} lucky number is ${result}`)
@@ -80,12 +72,12 @@ startGame = (player1, player2) => {
     }
 }
 
-var player1 = {
+const player1 = {
     name: "Willfried",
     luckyNumber: null
 }
 
-var player2 = {
+const player2 = {
     name: "Wawrinka",
     luckyNumber: null
 }

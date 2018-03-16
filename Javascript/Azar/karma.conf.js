@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'index.spec.js',
+      'spec/*.spec.js',
       'index.js'
     ],
 
@@ -56,7 +56,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['ChromeHeadless'],
+    browsers: ['ChromeHeadless', 'FirefoxHeadless'],
 
 
     // Continuous Integration mode

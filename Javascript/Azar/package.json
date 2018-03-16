@@ -14,12 +14,13 @@
     "karma": "^2.0.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage-es6": "^0.2.7",
-    "karma-jasmine": "^1.1.1",
-    "karma-phantomjs-launcher": "^1.0.4"
+    "karma-jasmine": "^1.1.1"
   },
   "dependencies": {
     "karma-coverage": "^1.1.1",
     "karma-spec-reporter": "0.0.32",
-    "karma-verbose-reporter": "0.0.6"
+    "karma-verbose-reporter": "0.0.6",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-jasmine": "^1.1.1"
   }
 }
