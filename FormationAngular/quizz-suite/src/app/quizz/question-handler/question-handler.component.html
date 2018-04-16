@@ -1,0 +1,15 @@
+<p *ngIf="!!subject">
+  My current quizz subject: <strong>{{subject?.name}}</strong> !!
+</p>
+<section *ngIf="!!subject">
+  <div class="list-group">
+    <a class="list-group-item list-group-item-action active">
+      Question {{subject.questions[questionIndex]}} :
+    </a>
+    <a *ngFor="let possibility of subject.responses[questionIndex].possibilities; let j=index"
+       (click)="userSelectedAnswer(j, subject.responses[questionIndex])"
+       class="list-group-item list-group-item-action">
+      {{possibility}}
+    </a>
+  </div>
+</section>

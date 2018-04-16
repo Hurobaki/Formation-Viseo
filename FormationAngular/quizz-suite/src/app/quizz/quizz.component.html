@@ -1,0 +1,16 @@
+<div class="quizz">
+  <div class="list-group margin-20">
+    <a class="list-group-item list-group-item-action list-group-item-danger">
+      Choix des questionnaires
+    </a>
+    <!--(click)="userSelect( subject )" -->
+    <a *ngFor="let subject of subjects; let i = index"
+       class="list-group-item list-group-item-action"
+       [routerLink]="['questions', i]"
+    >
+      {{getName(subject)}}
+    </a>
+  </div>
+  <h2 *ngIf="!!finalScore">Votre score : {{score}}</h2>
+  <!--<app-question-handler *ngIf="display" [subject]="selectedSubject" (returnScore)="score=($event)"></app-question-handler>-->
+</div>
